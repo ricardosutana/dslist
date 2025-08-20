@@ -16,10 +16,13 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
     
-    public List<Game> findAll() {
+    public List<GameMinDTO> findAll() {
         // This method will contain logic to retrieve all games and convert them to GameMinDTOs
-    List<Game> result = gameRepository.findAll();
-    return result; 
+        List<Game> result = gameRepository.findAll();
+        List<GameMinDTO> dtoList = result.stream()
+            .map(x -> new GameMinDTO(x)) // Convert each Game entity to GameMinDTO
+            .toList(); // Colle1t the results into a list
+    return dtoList; 
 
         }
     }

@@ -6,6 +6,7 @@ import com.devsuperior.dslist.entities.Game;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
     // This interface will automatically inherit methods for CRUD operations
-    // and can be extended with custom query methods if needed.
+    // and can be extended with custom query methods if needed. <Entity, ID>
+    // JpaRepository provides methods like findAll, findById, save, deleteById, etc.
 
 }
