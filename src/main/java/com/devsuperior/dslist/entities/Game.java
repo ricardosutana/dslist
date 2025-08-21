@@ -13,18 +13,24 @@ import jakarta.persistence.Table;
 @Entity // configura a classe como uma entidade JPA do tipo "Game" no banco de dados
 @Table(name = "tb_game")
 public class Game {
+
     @Id // define o campo "id" como a chave primária da entidade
     @GeneratedValue(strategy = GenerationType.IDENTITY) // indica que o valor do campo "id" será gerado automaticamente pelo banco de dados
     private Long id;
+
     private String title;
+
     @Column(name = "game_year")// mapeia o campo "year" para a coluna "game_year" na tabela do banco de dados
     private String year;
+    
     private String genre;
     private String platforms;
     private Double score;
     private String imgUrl;
+
     @Column(columnDefinition = "TEXT") // define o tipo da coluna como TEXT no banco de dados
     private String shortDescription;
+
     @Column(columnDefinition = "TEXT") // define o tipo da coluna como TEXT no banco de dados
     private String longDescription;
 
